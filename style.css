@@ -75,7 +75,7 @@ section.about { border-top: 0; }
 .paper .note { font-size: 14px; color: var(--navy); margin-top: 4px; }
 
 /* CV timeline */
-.timeline { display: grid; grid-template-columns: 90px 1fr; gap: 8px 16px; margin: 0; }
+.timeline { display: grid; grid-template-columns: 110px 1fr; gap: 8px 16px; margin: 0; }
 .timeline dt { color: var(--muted); font-size: 15px; }
 .timeline dd { margin: 0; }
 
