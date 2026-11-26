@@ -1,0 +1,107 @@
+:root {
+  --ink: #1d2433;
+  --muted: #5d6677;
+  --navy: #1f3a68;
+  --line: #e3e6ec;
+  --bg: #ffffff;
+  --soft: #f5f7fa;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(31, 58, 104, 0.25); }
+a:hover { border-bottom-color: var(--navy); }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); border: 0; }
+nav a { margin-left: 24px; font-size: 15px; color: var(--muted); border: 0; }
+nav a:hover { color: var(--navy); }
+
+/* About */
+.about { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 64px 0 48px; }
+.photo { position: relative; width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background: var(--soft); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.initials { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 56px; color: var(--navy); opacity: 0.5; }
+
+h1 { font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1.15; margin: 0 0 6px; }
+.role { color: var(--muted); margin: 0 0 24px; }
+.intro p { margin: 0 0 14px; }
+
+.links { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+
+.interests { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.interests p { margin: 0; }
+
+/* Sections */
+section { padding: 40px 0; border-top: 1px solid var(--line); }
+section.about { border-top: 0; }
+.section-title { font-family: var(--serif); font-weight: 600; font-size: 28px; margin: 0 0 8px; }
+.group { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 32px 0 12px; }
+
+/* Papers */
+.paper { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.paper:last-of-type { border-bottom: 0; }
+.paper p { margin: 0; }
+.paper .title { font-family: var(--serif); font-size: 18px; font-weight: 600; line-height: 1.4; }
+.paper .meta { color: var(--muted); font-size: 15px; margin-top: 4px; }
+.paper .note { font-size: 14px; color: var(--navy); margin-top: 4px; }
+
+/* CV timeline */
+.timeline { display: grid; grid-template-columns: 90px 1fr; gap: 8px 16px; margin: 0; }
+.timeline dt { color: var(--muted); font-size: 15px; }
+.timeline dd { margin: 0; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+
+/* Mobile */
+@media (max-width: 680px) {
+  .about { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; }
+  .photo { width: 140px; height: 140px; }
+  .initials { font-size: 40px; }
+  h1 { font-size: 32px; }
+  nav a { margin-left: 16px; }
+  .timeline { grid-template-columns: 1fr; gap: 0; }
+  .timeline dd { margin-bottom: 10px; }
+}
+
+/* Multi-page additions */
+nav a.active { color: var(--navy); font-weight: 600; }
+.side { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.univ-logo { display: block; width: 100%; max-width: 200px; height: auto; }
+section.page { border-top: 0; padding-top: 56px; min-height: 60vh; }
+section.page .group:first-of-type { margin-top: 20px; }
+
+@media (max-width: 680px) {
+  .side { flex-direction: row; justify-content: flex-start; gap: 20px; }
+  .univ-logo { max-width: 150px; }
+  section.page { padding-top: 36px; }
+}
