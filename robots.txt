@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yejinyu.github.io/sitemap.xml
